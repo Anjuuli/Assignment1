@@ -3,7 +3,8 @@
 <div class="container w-75 p-5">
     <h2 class="text-center">Book Management System</h2>
     <a href="add-update" class="btn btn-primary float-end">Add Book</a>
-    <table class="table table-striped">
+    <a href="customer" class="btn btn-outline-secondary float-end me-2">Check Customer</a>
+    <table class="table">
         <thead>
         <tr>
             <th scope="col">Book ID</th>
@@ -17,11 +18,11 @@
         <c:forEach items="${books}" var="book">
             <tr>
                 <th scope="row">${book.id}</th>
-                <td>${book.bookName}</td>
+                <td>${book.name}</td>
                 <td>${book.author}</td>
                 <td>${book.stock}</td>
                 <td>
-                    <a href="./issue-book" class="btn btn-sm btn-outline-primary">Issue</a>
+                    <a href="./issue-book?id=${book.id}" class="btn btn-sm btn-outline-primary">Issue</a>
                     <a href="./add-update?id=${book.id}" class="btn btn-sm btn-outline-secondary">Edit</a>
                     <a href="./delete-book?id=${book.id}" class="btn btn-sm btn-outline-danger">Delete</a>
                 </td>

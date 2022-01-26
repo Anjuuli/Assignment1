@@ -7,6 +7,12 @@ public class Customer {
 
     public Customer() {}
 
+    public Customer(String name, String address, long contact) {
+        this.name = name;
+        this.address = address;
+        this.contact = contact;
+    }
+
     public Customer(int id, String name, String address, long contact) {
         this.id = id;
         this.name = name;

@@ -20,12 +20,12 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public int save(Book book) throws ClassNotFoundException, SQLException {
-        final String QUERY = "INSERT INTO book (bookName, author, stock) VALUES (?,?,?)";
+        final String QUERY = "INSERT INTO book (name, author, stock) VALUES (?,?,?)";
 
         connection = ConnectionFactory.getConnection();
         preparedStatement = connection.prepareStatement(QUERY);
 
-        preparedStatement.setString(1, book.getBookName());
+        preparedStatement.setString(1, book.getName());
         preparedStatement.setString(2, book.getAuthor());
         preparedStatement.setInt(3, book.getStock());
 
@@ -44,7 +44,7 @@ public class BookDaoImpl implements BookDao {
             Book book = new Book();
 
             book.setId(resultSet.getInt("id"));
-            book.setBookName(resultSet.getString("bookName"));
+            book.setName(resultSet.getString("name"));
             book.setAuthor(resultSet.getString("author"));
             book.setStock(Integer.parseInt(resultSet.getString("stock")));
 
@@ -69,7 +69,7 @@ public class BookDaoImpl implements BookDao {
 
         while (resultSet.next()) {
             book.setId(resultSet.getInt("id"));
-            book.setBookName(resultSet.getString("bookName"));
+            book.setName(resultSet.getString("name"));
             book.setAuthor(resultSet.getString("author"));
             book.setStock(Integer.parseInt(resultSet.getString("stock")));
         }
@@ -79,12 +79,12 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public int update(Book book) throws ClassNotFoundException, SQLException {
-        final String QUERY = "UPDATE book SET bookName = ?, author = ?, stock = ? WHERE id = ?";
+        final String QUERY = "UPDATE book SET name = ?, author = ?, stock = ? WHERE id = ?";
 
         connection = ConnectionFactory.getConnection();
         preparedStatement = connection.prepareStatement(QUERY);
 
-        preparedStatement.setString(1, book.getBookName());
+        preparedStatement.setString(1, book.getName());
         preparedStatement.setString(2, book.getAuthor());
         preparedStatement.setInt(3, book.getStock());
         preparedStatement.setInt(4, book.getId());

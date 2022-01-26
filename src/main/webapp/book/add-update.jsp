@@ -1,11 +1,11 @@
-<%@include file="./templates/header.jsp" %>
+<%@include file="../templates/header.jsp" %>
 <div class="container w-75 p-5">
     <h2 class="text-center">Add a Book</h2>
     <form action="./add-update" method="POST">
         <div class="col-md-6 mt-3 w-100">
-            <label for="bookName" class="form-label">Book Name</label>
-            <input type="text" class="form-control" id="bookName" name="bookName" required
-                   placeholder="Goosebumps - Stay Out of the Basement" value="${book.bookName}">
+            <label for="name" class="form-label">Book Name</label>
+            <input type="text" class="form-control" id="name" name="name" required
+                   placeholder="Goosebumps - Stay Out of the Basement" value="${book.name}">
         </div>
 
         <div class="row">
@@ -33,4 +33,4 @@
         <button type="submit" class="btn btn-primary float-end">${action}</button>
     </form>
 </div>
-<%@include file="./templates/footer.jsp" %>
+<%@include file="../templates/footer.jsp" %>

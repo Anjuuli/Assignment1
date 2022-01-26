@@ -1,21 +1,21 @@
 package com.iims.model;
 
 public class Book {
-    int id, stock;
-    String bookName, author;
+    private int id, stock;
+    private String name, author;
 
     public Book() {}
 
-    public Book(String bookName, String author, int stock) {
+    public Book(String name, String author, int stock) {
         this.stock = stock;
-        this.bookName = bookName;
+        this.name = name;
         this.author = author;
     }
 
-    public Book(int id, String bookName, String author, int stock) {
+    public Book(int id, String name, String author, int stock) {
         this.id = id;
         this.stock = stock;
-        this.bookName = bookName;
+        this.name = name;
         this.author = author;
     }
 
@@ -35,12 +35,12 @@ public class Book {
         this.stock = stock;
     }
 
-    public String getBookName() {
-        return bookName;
+    public String getName() {
+        return name;
     }
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAuthor() {
