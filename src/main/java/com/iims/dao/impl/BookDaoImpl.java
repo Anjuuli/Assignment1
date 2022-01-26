@@ -95,13 +95,19 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public int delete(int id) throws ClassNotFoundException, SQLException {
-        final String QUERY = "DELETE FROM book where id = ?";
+        Book book = findOne(id);
 
-        connection = ConnectionFactory.getConnection();
-        preparedStatement = connection.prepareStatement(QUERY);
+        if(book.getStock() == 0){
+            final String QUERY = "DELETE FROM book where id = ?";
 
-        preparedStatement.setInt(1, id);
+            connection = ConnectionFactory.getConnection();
+            preparedStatement = connection.prepareStatement(QUERY);
 
-        return preparedStatement.executeUpdate();
+            preparedStatement.setInt(1, id);
+
+            return preparedStatement.executeUpdate();
+        }
+
+        return 0;
     }
 }
