@@ -47,7 +47,7 @@ public class IssueBook extends HttpServlet {
 
                 if(book.getName() != null && customer.getName() != null){
 
-                    if (book.getStock()-1 < 0) {
+                    if (book.getStock()-1 <= -1) {
                         throw new Exception("Stock out!");
                     }
 
