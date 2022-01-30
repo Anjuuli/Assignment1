@@ -5,9 +5,9 @@
         <div class="col mt-3 w-100">
             <label for="customerId" class="form-label">Customer ID</label>
             <input type="number" class="form-control" id="customerId" name="customerId" required
-                   placeholder="John Doe">
+                   placeholder="1">
         </div>
-        <input type="hidden" class="form-control" id="bookId" name="bookId" value="${bookId}">
+        <input type="hidden" class="form-control" id="bookId" name="bookId" value="${id}">
 
         <button type="submit" class="btn btn-primary float-end mt-3">Issue</button>
     </form>

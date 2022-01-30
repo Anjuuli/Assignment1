@@ -34,7 +34,7 @@ public class IssueBook extends HttpServlet {
         BookCustomerDao bookCustomerDao = new BookCustomerDaoImpl();
         BookDao bookDao = new BookDaoImpl();
         CustomerDao customerDao = new CustomerDaoImpl();
-        String bookId = req.getParameter("bookId");
+        String bookId = req.getParameter("id");
         String customerId = req.getParameter("customerId");
         int result = 0;
         if (bookId != null && customerId != null) {
